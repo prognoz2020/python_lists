@@ -1,0 +1,33 @@
+# Найти слова полиндромы в списке и вывести их в массив. Решение 1.
+words = ['мадам', 'топот', 'test', 'madam', 'word']
+palindromes = []
+for word in words:
+    if word == word[::-1]: # если исходное слово и перевернутое слово равны
+        palindromes.append(word)
+print(palindromes) # ['мадам', 'топот', 'madam']
+
+# Найти слова полиндромы в списке. Решение 2.
+palindromes = [word for word in words if word == word[::-1]]
+print(palindromes) # ['мадам', 'топот', 'madam']
+
+
+my_str = ['А роза упала на лапу Азора', 'Около Миши молоко', 'собака лает']
+palindromes = []
+
+for word in my_str:
+    word_r = word.replace(' ', '').lower() # вережим пробел, преобразуем к нижнему регистру
+    if word_r == word_r[::-1]:
+        palindromes.append(word)
+
+print(palindromes) # ['А роза упала на лапу Азора', 'Около Миши молоко']
+
+# join()
+l = list(range(1, 10))
+l2 = list('hello')
+
+print(l) # [1, 2, 3, 4, 5, 6, 7, 8, 9]
+s = '-'.join(map(str, l)) # приведем числа к строке.
+print(s) # 1-2-3-4-5-6-7-8-9
+
+s2 = ','.join(l2)
+print(s2) # h,e,l,l,o
